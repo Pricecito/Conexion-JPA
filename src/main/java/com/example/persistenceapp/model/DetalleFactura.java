@@ -1,7 +1,5 @@
 package com.example.persistenceapp.model;
 
-import java.math.BigDecimal;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,7 +20,7 @@ public class DetalleFactura {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer cantidad;
-    private BigDecimal subtotal;
+    private Double subtotal;
 
     // esta etiquea crea una tala nueva donde la conformaran el id de la factura y
     // de los detalles solo si no lleva mappedBy
