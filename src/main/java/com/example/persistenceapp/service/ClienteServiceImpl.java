@@ -5,14 +5,12 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.example.persistenceapp.model.Cliente;
 import com.example.persistenceapp.repo.IPersonaRepo;
 
-@Primary
-@Service("ServiceCrud")
+@Service("ServiceCliente")
 @Lazy
 public class ClienteServiceImpl implements IService<Cliente> {
     @Autowired
