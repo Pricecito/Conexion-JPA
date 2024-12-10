@@ -14,6 +14,8 @@ public class Persona {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idPersona;
 
+    // cuando un atributo no tiene la anotación @Column toma como nombre el nombre
+    // del mismo atributo
     @Column(name = "nombre", length = 50)
     private String nombre;
 

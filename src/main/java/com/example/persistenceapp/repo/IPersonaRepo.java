@@ -1,9 +1,10 @@
 package com.example.persistenceapp.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import com.example.persistenceapp.model.Persona;
+import com.example.persistenceapp.model.Cliente;
 
-public interface IPersonaRepo extends JpaRepository<Persona, Integer> {
-
+@Repository
+public interface IPersonaRepo extends JpaRepository<Cliente, Long> {
 }
