@@ -1,11 +1,15 @@
 package com.example.persistenceapp.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,5 +35,10 @@ public class Cliente {
     // columna que contrendra llave foraneo de domicilio
     @JoinColumn(name = "fk_domicilio")
     private Domicilio domicilio;
+
+    // @OneTo Many se usa para hacer posible lal bidirecionalidad de datos entre
+    // factura y cliente
+    @OneToMany(mappedBy = "cliente")
+    private List<Factura> facturas = new ArrayList<Factura>();
 
 }

@@ -1,12 +1,16 @@
 package com.example.persistenceapp.model;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -25,6 +29,9 @@ public class Articulo {
 
     @Column(name = "precio")
     private BigDecimal precio;
+
+    @OneToMany(mappedBy = "articulo", cascade = CascadeType.ALL)
+    private List<DetalleFactura> detalles = new ArrayList<DetalleFactura>();
 
     public Long getId() {
         return id;
